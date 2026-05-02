@@ -1,0 +1,17 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*~
+*.swp
+*.swo
+.#*
+.idea/
+.vscode/
+
+# Backups / scratch
+*.bak
+*.orig
+*.tmp
+test.txt
