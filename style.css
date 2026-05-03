@@ -65,6 +65,7 @@ h1, h2 {
 #showcase-text {
     background-color: #fff;
     border: 1px #404040 solid;
+    border-radius: 10px;
     padding: 40px 40px;
     font-family: "Unica One";
 }
