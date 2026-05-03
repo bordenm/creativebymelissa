@@ -33,6 +33,9 @@ nav a {
 nav a:hover {
     color: #A188C9;
 }
+h1 {
+    color: #A188C9;
+}
 h1, h2 {
     text-transform: lowercase;
     line-height: 50px;
