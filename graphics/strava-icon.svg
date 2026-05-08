@@ -1,16 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-label="strava" role="img">
-  <g fill="#FC4C02">
-    <rect x="6" y="0" width="2" height="1"/>
-    <rect x="5" y="1" width="2" height="1"/>
-    <rect x="4" y="2" width="2" height="1"/>
-    <rect x="3" y="3" width="2" height="1"/>
-    <rect x="6" y="3" width="2" height="1"/>
-    <rect x="2" y="4" width="2" height="1"/>
-    <rect x="5" y="4" width="2" height="1"/>
-    <rect x="1" y="5" width="2" height="1"/>
-    <rect x="4" y="5" width="2" height="1"/>
-    <rect x="0" y="6" width="2" height="1"/>
-    <rect x="3" y="6" width="2" height="1"/>
-    <rect x="2" y="7" width="2" height="1"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="strava" role="img">
+  <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169" fill="#FC4C02"/>
 </svg>
