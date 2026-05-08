@@ -1,3 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="cbm blog" role="img">
   <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#ffffff"/>
+  <g fill="#ffffff" shape-rendering="crispEdges">
+    <rect x="17" y="7" width="1" height="3"/>
+    <rect x="16" y="8" width="3" height="1"/>
+  </g>
 </svg>
