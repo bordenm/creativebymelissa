@@ -3,29 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="light only">
+<meta name="color-scheme" content="dark only">
 <title>Creative by Melissa — Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&family=Pixelify+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
   :root {
-    color-scheme: light only;
-    --bg: #EAEEF2;
-    --bg-deep: #D8DDE3;
-    --ink: #3A3D5C;
-    --ink-soft: #5C5F78;
-    --purple-deep: #6B7FA8;
-    --purple-light: #9BB1D0;
-    --pine: #7BA084;
-    --gold: #E8C66E;
+    color-scheme: dark only;
+    --bg: #2A2D40;
+    --bg-deep: #1F2230;
+    --ink: #EAEEF2;
+    --ink-soft: #B8BDC8;
+    --purple-deep: #E8C66E;
+    --purple-light: #F0D58F;
+    --pine: #8FBE94;
+    --gold: #DD7B5C;
     --paper: #FFFFFF;
     --white: #FFFFFF;
-    --shadow: rgba(58, 61, 92, 0.18);
+    --shadow: rgba(0, 0, 0, 0.4);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -36,10 +35,10 @@
     font-size: 17px;
     overflow-x: hidden;
     background-image:
-      linear-gradient(to right, rgba(107, 127, 168, 0.18) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(107, 127, 168, 0.18) 1px, transparent 1px),
-      linear-gradient(to right, rgba(107, 127, 168, 0.09) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(107, 127, 168, 0.09) 1px, transparent 1px);
+      linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
     background-size: 140px 140px, 140px 140px, 28px 28px, 28px 28px;
     background-attachment: fixed;
   }
@@ -47,39 +46,25 @@
   .pixel { font-family: 'Pixelify Sans', monospace; letter-spacing: 0.02em; }
 
   nav.top {
-    position: sticky;
-    top: 0;
-    z-index: 50;
+    position: sticky; top: 0; z-index: 50;
     background: var(--bg);
     border-bottom: 3px solid var(--ink);
     padding: 14px 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex; align-items: center; justify-content: space-between;
     box-shadow: 0 4px 0 var(--shadow);
   }
   nav.top .brand {
     font-family: 'Pixelify Sans', monospace;
-    font-weight: 700;
-    font-size: 18px;
-    color: var(--purple-deep);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    font-weight: 700; font-size: 18px;
+    color: var(--purple-deep); text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
   }
   nav.top .brand svg { display: block; }
-  nav.top ul {
-    list-style: none;
-    display: flex;
-    gap: 28px;
-  }
+  nav.top ul { list-style: none; display: flex; gap: 28px; }
   nav.top li a {
     font-family: 'Pixelify Sans', monospace;
-    font-size: 15px;
-    color: var(--ink);
-    text-decoration: none;
-    transition: color 0.15s;
+    font-size: 15px; color: var(--ink);
+    text-decoration: none; transition: color 0.15s;
   }
   nav.top li a:hover { color: var(--purple-deep); }
   @media (max-width: 640px) {
@@ -92,71 +77,52 @@
   .hero {
     min-height: 92vh;
     padding: 80px 24px 120px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    text-align: center;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    position: relative; text-align: center;
   }
-
   .hero-stack { position: relative; z-index: 5; max-width: 900px; }
-
   .hero h1 {
     font-family: 'JetBrains Mono', monospace;
     font-weight: 700;
     font-size: clamp(38px, 8.5vw, 88px);
-    line-height: 1;
-    color: var(--purple-deep);
-    letter-spacing: -0.04em;
-    margin-bottom: 28px;
+    line-height: 1; color: var(--purple-deep);
+    letter-spacing: -0.04em; margin-bottom: 28px;
     animation: hero-rise 0.8s cubic-bezier(0.2, 0.7, 0.3, 1) both;
   }
   .hero h1 em { font-style: normal; color: var(--ink); }
-
   .hero .tag {
-    font-family: 'Lora', serif;
-    font-style: italic;
+    font-family: 'Lora', serif; font-style: italic;
     font-size: clamp(18px, 2.4vw, 24px);
-    color: var(--ink);
-    max-width: 540px;
+    color: var(--ink); max-width: 540px;
     margin: 0 auto 36px;
     animation: hero-rise 0.8s 0.2s cubic-bezier(0.2, 0.7, 0.3, 1) both;
   }
-
   .hero .cta-row {
-    display: flex;
-    gap: 18px;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: flex; gap: 18px;
+    justify-content: center; flex-wrap: wrap;
     animation: hero-rise 0.8s 0.4s cubic-bezier(0.2, 0.7, 0.3, 1) both;
   }
   .pixel-btn {
     font-family: 'Pixelify Sans', monospace;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 16px; font-weight: 600;
     padding: 12px 24px;
-    background: var(--white);
-    color: var(--ink);
-    border: 3px solid var(--ink);
-    box-shadow: 4px 4px 0 var(--ink);
-    text-decoration: none;
-    cursor: pointer;
+    background: var(--white); color: #2A2D40;
+    border: 3px solid #1F2230;
+    box-shadow: 4px 4px 0 #1F2230;
+    text-decoration: none; cursor: pointer;
     transition: transform 0.1s, box-shadow 0.1s;
   }
-  .pixel-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
-  .pixel-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
-  .pixel-btn.primary { background: var(--purple-deep); color: var(--white); }
+  .pixel-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 #1F2230; }
+  .pixel-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 #1F2230; }
+  .pixel-btn.primary { background: var(--purple-deep); color: #1F2230; }
 
   @keyframes hero-rise {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .hero-deco {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    pointer-events: none; z-index: 1;
-  }
+  .hero-deco { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
   .deco { position: absolute; image-rendering: pixelated; }
   .cloud-1 { top: 12%; left: 8%; width: 80px; animation: drift 18s ease-in-out infinite; }
   .cloud-2 { top: 18%; right: 10%; width: 64px; animation: drift 24s ease-in-out -8s infinite reverse; }
@@ -193,14 +159,10 @@
   .container { max-width: 1100px; margin: 0 auto; }
   .section-label {
     font-family: 'Pixelify Sans', monospace;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--purple-deep);
+    font-size: 14px; text-transform: uppercase;
+    letter-spacing: 0.2em; color: var(--purple-deep);
     margin-bottom: 14px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    display: flex; align-items: center; gap: 12px;
   }
   .section-label::before { content: ''; width: 28px; height: 6px; background: var(--purple-deep); }
   .section-title {
@@ -208,8 +170,7 @@
     font-weight: 700;
     font-size: clamp(26px, 4.5vw, 46px);
     color: var(--ink);
-    line-height: 1;
-    letter-spacing: -0.04em;
+    line-height: 1; letter-spacing: -0.04em;
     margin-bottom: 36px;
   }
   .section-title em { font-style: normal; }
@@ -219,7 +180,7 @@
   .portrait-frame {
     aspect-ratio: 1;
     background: var(--paper);
-    border: 4px solid var(--ink);
+    border: 4px solid #1F2230;
     box-shadow: 8px 8px 0 var(--purple-deep);
     display: flex; align-items: center; justify-content: center;
     position: relative; overflow: hidden;
@@ -227,7 +188,7 @@
   .portrait-frame::before {
     content: 'photo goes here';
     font-family: 'Pixelify Sans', monospace;
-    color: var(--ink-soft); font-size: 14px;
+    color: #5C5F78; font-size: 14px;
   }
   .portrait-frame .moon-deco { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; }
   .about-copy h3 {
@@ -247,8 +208,8 @@
   .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 28px; }
   .work-card {
     background: var(--white);
-    border: 3px solid var(--ink);
-    box-shadow: 6px 6px 0 var(--ink);
+    border: 3px solid #1F2230;
+    box-shadow: 6px 6px 0 #1F2230;
     overflow: hidden;
     transition: transform 0.15s, box-shadow 0.15s;
     cursor: pointer; display: block;
@@ -258,41 +219,49 @@
   .work-card .thumb {
     aspect-ratio: 4/5; background: var(--bg-deep);
     display: flex; align-items: center; justify-content: center;
-    overflow: hidden; border-bottom: 3px solid var(--ink);
+    overflow: hidden; border-bottom: 3px solid #1F2230;
   }
   .work-card .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .work-card .meta { padding: 14px 16px; }
-  .work-card .meta .title { font-family: 'Pixelify Sans', monospace; font-size: 16px; font-weight: 600; margin-bottom: 4px; }
-  .work-card .meta .kind { font-size: 13px; color: var(--ink-soft); font-style: italic; }
+  .work-card .meta .title {
+    font-family: 'Pixelify Sans', monospace;
+    font-size: 16px; font-weight: 600;
+    margin-bottom: 4px; color: #1F2230;
+  }
+  .work-card .meta .kind { font-size: 13px; color: #5C5F78; font-style: italic; }
 
   .writing-list { display: flex; flex-direction: column; gap: 18px; max-width: 780px; }
   .writing-item {
     display: flex; align-items: baseline; gap: 18px;
     padding: 22px 24px; background: var(--paper);
-    border: 3px solid var(--ink); box-shadow: 5px 5px 0 var(--ink);
+    border: 3px solid #1F2230; box-shadow: 5px 5px 0 #1F2230;
     text-decoration: none; color: inherit;
     transition: transform 0.15s, box-shadow 0.15s;
   }
   .writing-item:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--pine); }
   .writing-item .bullet { width: 12px; height: 12px; background: var(--purple-deep); flex-shrink: 0; transform: translateY(2px); }
   .writing-item .body { flex: 1; }
-  .writing-item .title { font-family: 'Pixelify Sans', monospace; font-size: 19px; font-weight: 600; margin-bottom: 4px; color: var(--ink); }
-  .writing-item .desc { font-size: 15px; color: var(--ink-soft); font-style: italic; }
+  .writing-item .title {
+    font-family: 'Pixelify Sans', monospace;
+    font-size: 19px; font-weight: 600;
+    margin-bottom: 4px; color: #1F2230;
+  }
+  .writing-item .desc { font-size: 15px; color: #5C5F78; font-style: italic; }
   .writing-item .arrow { font-family: 'Pixelify Sans', monospace; color: var(--purple-deep); font-size: 22px; }
 
   .connect-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
   .connect-card {
-    background: var(--ink); color: var(--white);
+    background: #3A3D5C; color: var(--white);
     padding: 28px 24px;
-    border: 3px solid var(--ink);
+    border: 3px solid #1F2230;
     box-shadow: 6px 6px 0 var(--purple-deep);
     text-decoration: none;
     transition: transform 0.15s, box-shadow 0.15s;
     display: flex; flex-direction: column; gap: 14px;
   }
   .connect-card:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 var(--purple-light); }
-  .connect-card.linkedin { box-shadow: 6px 6px 0 #5C7BA8; }
-  .connect-card.linkedin:hover { box-shadow: 9px 9px 0 #5C7BA8; }
+  .connect-card.linkedin { box-shadow: 6px 6px 0 #7B92E8; }
+  .connect-card.linkedin:hover { box-shadow: 9px 9px 0 #7B92E8; }
   .connect-card.strava { box-shadow: 6px 6px 0 #C97A4F; }
   .connect-card.strava:hover { box-shadow: 9px 9px 0 #C97A4F; }
   .connect-card.email { box-shadow: 6px 6px 0 var(--pine); }
@@ -303,30 +272,25 @@
   .connect-card .desc { font-size: 14px; color: rgba(255, 255, 255, 0.7); font-style: italic; }
 
   footer {
-    background: var(--ink); color: var(--bg);
+    background: var(--bg-deep); color: var(--ink);
     padding: 48px 24px 60px;
     border-top: 4px solid var(--purple-deep);
     text-align: center; margin-top: 80px;
   }
   footer .credit { font-family: 'Pixelify Sans', monospace; font-size: 14px; margin-bottom: 8px; }
-  footer .small { font-size: 13px; color: rgba(245, 241, 234, 0.5); font-style: italic; }
+  footer .small { font-size: 13px; color: rgba(255, 255, 255, 0.5); font-style: italic; }
 
-  .pine-row {
-    height: 60px; display: flex; align-items: end; justify-content: center;
-    gap: 6px; margin: 0 auto; max-width: 1100px;
-  }
+  .pine-row { height: 60px; display: flex; align-items: end; justify-content: center; gap: 6px; margin: 0 auto; max-width: 1100px; }
   .pine-row svg { image-rendering: pixelated; }
 
   .preview-banner {
-    background: var(--gold);
-    color: var(--ink);
-    text-align: center;
-    padding: 10px 20px;
+    background: var(--gold); color: #1F2230;
+    text-align: center; padding: 10px 20px;
     font-family: 'Pixelify Sans', monospace;
     font-size: 13px;
-    border-bottom: 3px solid var(--ink);
+    border-bottom: 3px solid #1F2230;
   }
-  .preview-banner a { color: var(--ink); }
+  .preview-banner a { color: #1F2230; }
 </style>
 </head>
 <body>
@@ -336,8 +300,8 @@
 <nav class="top">
   <a href="#" class="brand">
     <svg width="28" height="28" viewBox="0 0 24 24">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#5D4078"/>
-      <g fill="#5D4078" shape-rendering="crispEdges">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#E8C66E"/>
+      <g fill="#E8C66E" shape-rendering="crispEdges">
         <rect x="17" y="7" width="1" height="3"/>
         <rect x="16" y="8" width="3" height="1"/>
       </g>
@@ -367,7 +331,7 @@
       <g fill="#E8C66E"><rect x="4" y="0" width="1" height="2"/><rect x="3" y="2" width="3" height="1"/><rect x="0" y="3" width="9" height="1"/><rect x="2" y="4" width="5" height="1"/><rect x="0" y="5" width="9" height="1"/><rect x="3" y="6" width="3" height="1"/><rect x="4" y="7" width="1" height="2"/></g>
     </svg>
     <svg class="deco star-2" viewBox="0 0 9 9" shape-rendering="crispEdges">
-      <g fill="#9BB1D0"><rect x="4" y="0" width="1" height="2"/><rect x="3" y="2" width="3" height="1"/><rect x="0" y="3" width="9" height="1"/><rect x="2" y="4" width="5" height="1"/><rect x="0" y="5" width="9" height="1"/><rect x="3" y="6" width="3" height="1"/><rect x="4" y="7" width="1" height="2"/></g>
+      <g fill="#9CA5E8"><rect x="4" y="0" width="1" height="2"/><rect x="3" y="2" width="3" height="1"/><rect x="0" y="3" width="9" height="1"/><rect x="2" y="4" width="5" height="1"/><rect x="0" y="5" width="9" height="1"/><rect x="3" y="6" width="3" height="1"/><rect x="4" y="7" width="1" height="2"/></g>
     </svg>
     <svg class="deco star-3" viewBox="0 0 9 9" shape-rendering="crispEdges">
       <g fill="#E8C66E"><rect x="4" y="0" width="1" height="2"/><rect x="3" y="2" width="3" height="1"/><rect x="0" y="3" width="9" height="1"/><rect x="2" y="4" width="5" height="1"/><rect x="0" y="5" width="9" height="1"/><rect x="3" y="6" width="3" height="1"/><rect x="4" y="7" width="1" height="2"/></g>
@@ -409,8 +373,8 @@
     <div class="about-grid">
       <div class="portrait-frame">
         <svg class="moon-deco" viewBox="0 0 24 24">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#5D4078"/>
-          <g fill="#5D4078" shape-rendering="crispEdges">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#E8C66E"/>
+          <g fill="#E8C66E" shape-rendering="crispEdges">
             <rect x="17" y="7" width="1" height="3"/>
             <rect x="16" y="8" width="3" height="1"/>
           </g>
