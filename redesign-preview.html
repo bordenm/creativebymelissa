@@ -185,12 +185,19 @@
     display: flex; align-items: center; justify-content: center;
     position: relative; overflow: hidden;
   }
-  .portrait-frame::before {
+  .portrait-frame:not(:has(img))::before {
     content: 'photo goes here';
     font-family: 'Pixelify Sans', monospace;
     color: #5C5F78; font-size: 14px;
   }
-  .portrait-frame .moon-deco { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; }
+  .portrait-frame img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    image-rendering: pixelated;
+  }
+  .portrait-frame .moon-deco { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; z-index: 2; }
   .about-copy h3 {
     font-family: 'JetBrains Mono', monospace;
     font-size: 20px; font-weight: 700; letter-spacing: -0.03em;
@@ -372,6 +379,7 @@
     <h2 class="section-title">Hi, I'm Melissa.</h2>
     <div class="about-grid">
       <div class="portrait-frame">
+        <img src="images/melissa.jpeg" alt="Melissa" />
         <svg class="moon-deco" viewBox="0 0 24 24">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#E8C66E"/>
           <g fill="#E8C66E" shape-rendering="crispEdges">
