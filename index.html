@@ -1,74 +1,537 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Creative By Melissa (Borden)</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type = "text/css" href="style.css" />
-  <link rel="shortcut icon" href="bee.gif" />
-   <nav id="top">
-      <ul>
-        <li><a href="/">home</a></li>
-        <li><a href="#about">about</a></li>
-        <li><a href="#examples">graphics</a></li>
-        <li><a href="/writing.html">writing samples</a></li>
-        <li><a href="mailto:melissaborden@outlook.com">contact</a></li>
-      </ul>
-    </nav>
-    <header id="showcase">
-         <div id="showcase-text">
-            <h1>Creative By Melissa</h1>
-            <p>A creative outlet for my random thoughts.</p>
-         </div>
-    </header>
-   <!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8QNSFEKWV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-S8QNSFEKWV');
-  </script>  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark only">
+<title>Creative by Melissa</title>
+<meta name="description" content="A quiet corner of the internet by Melissa Borden — somewhere to write things down and link out to the rest of me." />
+<link rel="shortcut icon" href="bee.gif" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&family=Pixelify+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8QNSFEKWV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S8QNSFEKWV');
+</script>
+
+<style>
+  :root {
+    color-scheme: dark only;
+    --bg: #2A2D40;
+    --bg-deep: #1F2230;
+    --ink: #EAEEF2;
+    --ink-soft: #B8BDC8;
+    --purple-deep: #E8C66E;
+    --purple-light: #F0D58F;
+    --pine: #8FBE94;
+    --gold: #DD7B5C;
+    --paper: #FFFFFF;
+    --white: #FFFFFF;
+    --shadow: rgba(0, 0, 0, 0.4);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lora', Georgia, serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    font-size: 17px;
+    overflow-x: hidden;
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 140px 140px, 140px 140px, 28px 28px, 28px 28px;
+    background-attachment: fixed;
+  }
+
+  .pixel { font-family: 'Pixelify Sans', monospace; letter-spacing: 0.02em; }
+
+  nav.top {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--bg);
+    border-bottom: 3px solid var(--ink);
+    padding: 14px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    box-shadow: 0 4px 0 var(--shadow);
+  }
+  nav.top .brand {
+    font-family: 'Pixelify Sans', monospace;
+    font-weight: 700; font-size: 18px;
+    color: var(--purple-deep); text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+  }
+  nav.top .brand svg { display: block; }
+  nav.top ul { list-style: none; display: flex; gap: 28px; }
+  nav.top li a {
+    font-family: 'Pixelify Sans', monospace;
+    font-size: 15px; color: var(--ink);
+    text-decoration: none; transition: color 0.15s;
+  }
+  nav.top li a:hover { color: var(--purple-deep); }
+  @media (max-width: 640px) {
+    nav.top { padding: 12px 18px; }
+    nav.top ul { gap: 14px; }
+    nav.top li a { font-size: 13px; }
+    nav.top .brand { font-size: 15px; }
+  }
+
+  .hero {
+    min-height: 92vh;
+    padding: 80px 24px 120px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    position: relative; text-align: center;
+  }
+  .hero-stack { position: relative; z-index: 5; max-width: 900px; }
+  .hero h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: clamp(38px, 8.5vw, 88px);
+    line-height: 1; color: var(--purple-deep);
+    letter-spacing: -0.04em; margin-bottom: 28px;
+    animation: hero-rise 0.8s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  }
+  .hero h1 em { font-style: normal; color: var(--ink); }
+  .hero .tag {
+    font-family: 'Lora', serif; font-style: italic;
+    font-size: clamp(18px, 2.4vw, 24px);
+    color: var(--ink); max-width: 540px;
+    margin: 0 auto 36px;
+    animation: hero-rise 0.8s 0.2s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  }
+  .hero .cta-row {
+    display: flex; gap: 18px;
+    justify-content: center; flex-wrap: wrap;
+    animation: hero-rise 0.8s 0.4s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  }
+  .pixel-btn {
+    font-family: 'Pixelify Sans', monospace;
+    font-size: 16px; font-weight: 600;
+    padding: 12px 24px;
+    background: var(--white); color: #2A2D40;
+    border: 3px solid #1F2230;
+    box-shadow: 4px 4px 0 #1F2230;
+    text-decoration: none; cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+  }
+  .pixel-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 #1F2230; }
+  .pixel-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 #1F2230; }
+  .pixel-btn.primary { background: var(--purple-deep); color: #1F2230; }
+
+  @keyframes hero-rise {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-deco { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+  .deco { position: absolute; image-rendering: pixelated; }
+  .cloud-1 { top: 12%; left: 8%; width: 80px; animation: drift 18s ease-in-out infinite; }
+  .cloud-2 { top: 18%; right: 10%; width: 64px; animation: drift 24s ease-in-out -8s infinite reverse; }
+  .cloud-3 { top: 60%; left: 14%; width: 56px; animation: drift 20s ease-in-out -4s infinite; opacity: 0.7; }
+  .star-1 { top: 22%; right: 22%; width: 24px; animation: twinkle 3s ease-in-out infinite; }
+  .star-2 { top: 50%; left: 22%; width: 18px; animation: twinkle 3.5s ease-in-out -1.5s infinite; }
+  .star-3 { top: 38%; right: 14%; width: 20px; animation: twinkle 2.6s ease-in-out -0.8s infinite; }
+  .tree-1 { bottom: 0; left: 4%; width: 70px; }
+  .tree-2 { bottom: 0; left: 14%; width: 52px; }
+  .tree-3 { bottom: 0; right: 6%; width: 64px; }
+  .tree-4 { bottom: 0; right: 18%; width: 44px; }
+
+  @keyframes drift {
+    0%, 100% { transform: translateX(0) translateY(0); }
+    50% { transform: translateX(20px) translateY(-6px); }
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(0.85); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+
+  .scroll-cue {
+    position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+    font-family: 'Pixelify Sans', monospace; font-size: 13px;
+    color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.15em;
+    animation: bob 2s ease-in-out infinite;
+  }
+  @keyframes bob {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  section.content { padding: 100px 24px; position: relative; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-family: 'Pixelify Sans', monospace;
+    font-size: 14px; text-transform: uppercase;
+    letter-spacing: 0.2em; color: var(--purple-deep);
+    margin-bottom: 14px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::before { content: ''; width: 28px; height: 6px; background: var(--purple-deep); }
+  .section-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: clamp(26px, 4.5vw, 46px);
+    color: var(--ink);
+    line-height: 1; letter-spacing: -0.04em;
+    margin-bottom: 36px;
+  }
+  .section-title em { font-style: normal; }
+
+  .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: center; }
+  @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; gap: 36px; } }
+  .portrait-frame {
+    aspect-ratio: 1;
+    background: var(--paper);
+    border: 4px solid #1F2230;
+    box-shadow: 8px 8px 0 var(--purple-deep);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .portrait-frame:not(:has(img))::before {
+    content: 'photo goes here';
+    font-family: 'Pixelify Sans', monospace;
+    color: #5C5F78; font-size: 14px;
+  }
+  .portrait-frame img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    image-rendering: pixelated;
+  }
+  .portrait-frame .moon-deco { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; z-index: 2; }
+  .about-copy h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px; font-weight: 700; letter-spacing: -0.03em;
+    margin-bottom: 16px;
+  }
+  .about-copy p { font-size: 18px; margin-bottom: 16px; color: var(--ink-soft); }
+  .about-copy p:first-of-type { font-size: 22px; color: var(--ink); line-height: 1.5; }
+  .about-copy .meta { margin-top: 24px; display: flex; gap: 24px; flex-wrap: wrap; }
+  .about-copy .meta span {
+    font-family: 'Pixelify Sans', monospace;
+    font-size: 14px; color: var(--purple-deep);
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 28px; }
+  .work-card {
+    background: var(--white);
+    border: 3px solid #1F2230;
+    box-shadow: 6px 6px 0 #1F2230;
+    overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.15s;
+    cursor: pointer; display: block;
+    text-decoration: none; color: inherit;
+  }
+  .work-card:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 var(--purple-deep); }
+  .work-card .thumb {
+    aspect-ratio: 4/5; background: var(--bg-deep);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; border-bottom: 3px solid #1F2230;
+  }
+  .work-card .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .work-card .meta { padding: 14px 16px; }
+  .work-card .meta .title {
+    font-family: 'Pixelify Sans', monospace;
+    font-size: 16px; font-weight: 600;
+    margin-bottom: 4px; color: #1F2230;
+  }
+  .work-card .meta .kind { font-size: 13px; color: #5C5F78; font-style: italic; }
+
+  .writing-list { display: flex; flex-direction: column; gap: 18px; max-width: 780px; }
+  .writing-item {
+    display: flex; align-items: baseline; gap: 18px;
+    padding: 22px 24px; background: var(--paper);
+    border: 3px solid #1F2230; box-shadow: 5px 5px 0 #1F2230;
+    text-decoration: none; color: inherit;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .writing-item:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--pine); }
+  .writing-item .bullet { width: 12px; height: 12px; background: var(--purple-deep); flex-shrink: 0; transform: translateY(2px); }
+  .writing-item .body { flex: 1; }
+  .writing-item .title {
+    font-family: 'Pixelify Sans', monospace;
+    font-size: 19px; font-weight: 600;
+    margin-bottom: 4px; color: #1F2230;
+  }
+  .writing-item .desc { font-size: 15px; color: #5C5F78; font-style: italic; }
+  .writing-item .arrow { font-family: 'Pixelify Sans', monospace; color: var(--purple-deep); font-size: 22px; }
+
+  .connect-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+  .connect-card {
+    background: #3A3D5C; color: var(--white);
+    padding: 28px 24px;
+    border: 3px solid #1F2230;
+    box-shadow: 6px 6px 0 var(--purple-deep);
+    text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .connect-card:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 var(--purple-light); }
+  .connect-card.linkedin { box-shadow: 6px 6px 0 #7B92E8; }
+  .connect-card.linkedin:hover { box-shadow: 9px 9px 0 #7B92E8; }
+  .connect-card.strava { box-shadow: 6px 6px 0 #C97A4F; }
+  .connect-card.strava:hover { box-shadow: 9px 9px 0 #C97A4F; }
+  .connect-card.email { box-shadow: 6px 6px 0 var(--pine); }
+  .connect-card.email:hover { box-shadow: 9px 9px 0 var(--pine); }
+  .connect-card .icon { width: 36px; height: 36px; }
+  .connect-card .label { font-family: 'Pixelify Sans', monospace; font-size: 15px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--purple-light); }
+  .connect-card .handle { font-family: 'Pixelify Sans', monospace; font-size: 22px; font-weight: 600; }
+  .connect-card .desc { font-size: 14px; color: rgba(255, 255, 255, 0.7); font-style: italic; }
+
+  footer {
+    background: var(--bg-deep); color: var(--ink);
+    padding: 48px 24px 60px;
+    border-top: 4px solid var(--purple-deep);
+    text-align: center; margin-top: 80px;
+  }
+  footer .credit { font-family: 'Pixelify Sans', monospace; font-size: 14px; margin-bottom: 8px; }
+  footer .small { font-size: 13px; color: rgba(255, 255, 255, 0.5); font-style: italic; }
+
+  .pine-row { height: 60px; display: flex; align-items: end; justify-content: center; gap: 6px; margin: 0 auto; max-width: 1100px; }
+  .pine-row svg { image-rendering: pixelated; }
+</style>
 </head>
 <body>
-    
-  
-  <!-- <div id="middle-break"><img src="images/blue-diamond.svg" height="200px" width="200px"></div>
-  -->
-<section id="about">
-  <h2 class="tab">About</h2>
-    <div class="boxes">
-    <p>Melissa Borden based in Charlotte, NC. Portfolio of creative items including graphics and writing samples. Website is currently a work in progress.
-    </p>
-    <p><a href="#top">back to top</a></p>
+
+<nav class="top">
+  <a href="/" class="brand">
+    <svg width="28" height="28" viewBox="0 0 24 24">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#E8C66E"/>
+      <g fill="#E8C66E" shape-rendering="crispEdges">
+        <rect x="17" y="7" width="1" height="3"/>
+        <rect x="16" y="8" width="3" height="1"/>
+      </g>
+    </svg>
+    creative by melissa
+  </a>
+  <ul>
+    <li><a href="#about">about</a></li>
+    <!-- <li><a href="#graphics">graphics</a></li> -->
+    <!-- <li><a href="#writing">writing</a></li> -->
+    <li><a href="#connect">connect</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-deco">
+    <svg class="deco cloud-1" viewBox="0 0 10 6" shape-rendering="crispEdges">
+      <g fill="#FFFFFF"><rect x="3" y="1" width="2" height="1"/><rect x="6" y="1" width="2" height="1"/><rect x="2" y="2" width="6" height="1"/><rect x="1" y="3" width="8" height="1"/><rect x="0" y="4" width="10" height="1"/></g>
+    </svg>
+    <svg class="deco cloud-2" viewBox="0 0 10 6" shape-rendering="crispEdges">
+      <g fill="#FFFFFF"><rect x="3" y="1" width="2" height="1"/><rect x="6" y="1" width="2" height="1"/><rect x="2" y="2" width="6" height="1"/><rect x="1" y="3" width="8" height="1"/><rect x="0" y="4" width="10" height="1"/></g>
+    </svg>
+    <svg class="deco cloud-3" viewBox="0 0 10 6" shape-rendering="crispEdges">
+      <g fill="#FFFFFF"><rect x="3" y="1" width="2" height="1"/><rect x="6" y="1" width="2" height="1"/><rect x="2" y="2" width="6" height="1"/><rect x="1" y="3" width="8" height="1"/><rect x="0" y="4" width="10" height="1"/></g>
+    </svg>
+    <svg class="deco star-1" viewBox="0 0 9 9" shape-rendering="crispEdges">
+      <g fill="#E8C66E"><rect x="4" y="0" width="1" height="2"/><rect x="3" y="2" width="3" height="1"/><rect x="0" y="3" width="9" height="1"/><rect x="2" y="4" width="5" height="1"/><rect x="0" y="5" width="9" height="1"/><rect x="3" y="6" width="3" height="1"/><rect x="4" y="7" width="1" height="2"/></g>
+    </svg>
+    <svg class="deco star-2" viewBox="0 0 9 9" shape-rendering="crispEdges">
+      <g fill="#9CA5E8"><rect x="4" y="0" width="1" height="2"/><rect x="3" y="2" width="3" height="1"/><rect x="0" y="3" width="9" height="1"/><rect x="2" y="4" width="5" height="1"/><rect x="0" y="5" width="9" height="1"/><rect x="3" y="6" width="3" height="1"/><rect x="4" y="7" width="1" height="2"/></g>
+    </svg>
+    <svg class="deco star-3" viewBox="0 0 9 9" shape-rendering="crispEdges">
+      <g fill="#E8C66E"><rect x="4" y="0" width="1" height="2"/><rect x="3" y="2" width="3" height="1"/><rect x="0" y="3" width="9" height="1"/><rect x="2" y="4" width="5" height="1"/><rect x="0" y="5" width="9" height="1"/><rect x="3" y="6" width="3" height="1"/><rect x="4" y="7" width="1" height="2"/></g>
+    </svg>
+    <svg class="deco tree-1" viewBox="0 0 7 9" shape-rendering="crispEdges">
+      <g fill="#7BA084"><rect x="3" y="0" width="1" height="1"/><rect x="2" y="1" width="3" height="1"/><rect x="1" y="2" width="5" height="1"/><rect x="2" y="3" width="3" height="1"/><rect x="1" y="4" width="5" height="1"/><rect x="0" y="5" width="7" height="1"/><rect x="2" y="6" width="3" height="1"/></g>
+      <g fill="#5A4A3A"><rect x="3" y="7" width="1" height="2"/></g>
+    </svg>
+    <svg class="deco tree-2" viewBox="0 0 7 9" shape-rendering="crispEdges">
+      <g fill="#7BA084"><rect x="3" y="0" width="1" height="1"/><rect x="2" y="1" width="3" height="1"/><rect x="1" y="2" width="5" height="1"/><rect x="2" y="3" width="3" height="1"/><rect x="1" y="4" width="5" height="1"/><rect x="0" y="5" width="7" height="1"/><rect x="2" y="6" width="3" height="1"/></g>
+      <g fill="#5A4A3A"><rect x="3" y="7" width="1" height="2"/></g>
+    </svg>
+    <svg class="deco tree-3" viewBox="0 0 7 9" shape-rendering="crispEdges">
+      <g fill="#7BA084"><rect x="3" y="0" width="1" height="1"/><rect x="2" y="1" width="3" height="1"/><rect x="1" y="2" width="5" height="1"/><rect x="2" y="3" width="3" height="1"/><rect x="1" y="4" width="5" height="1"/><rect x="0" y="5" width="7" height="1"/><rect x="2" y="6" width="3" height="1"/></g>
+      <g fill="#5A4A3A"><rect x="3" y="7" width="1" height="2"/></g>
+    </svg>
+    <svg class="deco tree-4" viewBox="0 0 7 9" shape-rendering="crispEdges">
+      <g fill="#7BA084"><rect x="3" y="0" width="1" height="1"/><rect x="2" y="1" width="3" height="1"/><rect x="1" y="2" width="5" height="1"/><rect x="2" y="3" width="3" height="1"/><rect x="1" y="4" width="5" height="1"/><rect x="0" y="5" width="7" height="1"/><rect x="2" y="6" width="3" height="1"/></g>
+      <g fill="#5A4A3A"><rect x="3" y="7" width="1" height="2"/></g>
+    </svg>
+  </div>
+
+  <div class="hero-stack">
+    <h1>Creative <em>by</em><br>Melissa</h1>
+    <p class="tag">A quiet corner of the internet — somewhere to write things down and link out to the rest of me.</p>
+    <div class="cta-row">
+      <!-- <a href="#graphics" class="pixel-btn primary">see the work</a> -->
+      <a href="#about" class="pixel-btn primary">about me</a>
     </div>
-</section>
+  </div>
 
+  <div class="scroll-cue">↓ scroll</div>
+</header>
 
-<section id="examples">
-  <h2 class="tab">Graphics</h2>
-    <div class="boxes">
-    <p><a href="graphics/flyer.png"><img src="graphics/flyer.png" width="150" height="210" style="border:1px #404040 solid;" /></a>
-      <a href="graphics/mario.png"><img src="graphics/mario.png" width="170" height="210" style="border:1px #404040 solid;" /></a>
-      <a href="graphics/instagram-post.jpg"><img src="graphics/instagram-post.jpg" width="180" height="210" style="border:1px #404040 solid;" /></a>
-      <a href="graphics/instagram-post-2.jpg"><img src="graphics/instagram-post-2.jpg" width="180" height="210" style="border:1px #404040 solid;" /></a>
-      <a href="graphics/quill.png"><img src="graphics/quill.png" width="130" height="210" style="border:1px #404040 solid;" /></a>
-    </p>
-    <p><a href="#top">back to top</a></p>
+<section id="about" class="content">
+  <div class="container">
+    <div class="section-label">about</div>
+    <h2 class="section-title">Hi, I'm Melissa.</h2>
+    <div class="about-grid">
+      <div class="portrait-frame">
+        <img src="images/melissa.jpeg" alt="Melissa" />
+        <svg class="moon-deco" viewBox="0 0 24 24">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#E8C66E"/>
+          <g fill="#E8C66E" shape-rendering="crispEdges">
+            <rect x="17" y="7" width="1" height="3"/>
+            <rect x="16" y="8" width="3" height="1"/>
+          </g>
+        </svg>
+      </div>
+      <div class="about-copy">
+        <p>This is my slow little corner of the web.</p>
+        <p>There's no real plan — sometimes I write things down, sometimes I just leave a few links to the other places I exist online.</p>
+        <p>Half-formed thoughts and current obsessions live over on <a href="https://blog.creativebymelissa.com" style="color:var(--purple-deep);">the blog</a>.</p>
+        <div class="meta">
+          <span>📍 Charlotte, NC</span>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<section id="footer">
-  <a href="http://www.linkedin.com/in/bordenmelissa"><img src="images/linkedin.png" width="32" height="32" /></a>
-  <a href="https://www.strava.com/athletes/87501353"><img src="graphics/strava-icon.svg" width="32" height="32" alt="strava" /></a>
-  <a href="https://blog.creativebymelissa.com"><img src="graphics/blog-icon.svg" width="32" height="32" alt="cbm blog" /></a>
-  <br />
-    <p>Melissa Borden 2021</p>
+<div class="pine-row">
+  <svg width="32" height="40" viewBox="0 0 7 9" shape-rendering="crispEdges">
+    <g fill="#7BA084"><rect x="3" y="0" width="1" height="1"/><rect x="2" y="1" width="3" height="1"/><rect x="1" y="2" width="5" height="1"/><rect x="2" y="3" width="3" height="1"/><rect x="1" y="4" width="5" height="1"/><rect x="0" y="5" width="7" height="1"/><rect x="2" y="6" width="3" height="1"/></g>
+    <g fill="#5A4A3A"><rect x="3" y="7" width="1" height="2"/></g>
+  </svg>
+  <svg width="22" height="28" viewBox="0 0 7 9" shape-rendering="crispEdges">
+    <g fill="#7BA084"><rect x="3" y="0" width="1" height="1"/><rect x="2" y="1" width="3" height="1"/><rect x="1" y="2" width="5" height="1"/><rect x="2" y="3" width="3" height="1"/><rect x="1" y="4" width="5" height="1"/><rect x="0" y="5" width="7" height="1"/><rect x="2" y="6" width="3" height="1"/></g>
+    <g fill="#5A4A3A"><rect x="3" y="7" width="1" height="2"/></g>
+  </svg>
+  <svg width="44" height="56" viewBox="0 0 7 9" shape-rendering="crispEdges">
+    <g fill="#7BA084"><rect x="3" y="0" width="1" height="1"/><rect x="2" y="1" width="3" height="1"/><rect x="1" y="2" width="5" height="1"/><rect x="2" y="3" width="3" height="1"/><rect x="1" y="4" width="5" height="1"/><rect x="0" y="5" width="7" height="1"/><rect x="2" y="6" width="3" height="1"/></g>
+    <g fill="#5A4A3A"><rect x="3" y="7" width="1" height="2"/></g>
+  </svg>
+  <svg width="28" height="36" viewBox="0 0 7 9" shape-rendering="crispEdges">
+    <g fill="#7BA084"><rect x="3" y="0" width="1" height="1"/><rect x="2" y="1" width="3" height="1"/><rect x="1" y="2" width="5" height="1"/><rect x="2" y="3" width="3" height="1"/><rect x="1" y="4" width="5" height="1"/><rect x="0" y="5" width="7" height="1"/><rect x="2" y="6" width="3" height="1"/></g>
+    <g fill="#5A4A3A"><rect x="3" y="7" width="1" height="2"/></g>
+  </svg>
+  <svg width="36" height="44" viewBox="0 0 7 9" shape-rendering="crispEdges">
+    <g fill="#7BA084"><rect x="3" y="0" width="1" height="1"/><rect x="2" y="1" width="3" height="1"/><rect x="1" y="2" width="5" height="1"/><rect x="2" y="3" width="3" height="1"/><rect x="1" y="4" width="5" height="1"/><rect x="0" y="5" width="7" height="1"/><rect x="2" y="6" width="3" height="1"/></g>
+    <g fill="#5A4A3A"><rect x="3" y="7" width="1" height="2"/></g>
+  </svg>
+</div>
+
+<!-- GRAPHICS SECTION HIDDEN — uncomment to restore
+<section id="graphics" class="content">
+  <div class="container">
+    <div class="section-label">graphics</div>
+    <h2 class="section-title">Things I've made.</h2>
+    <div class="gallery">
+      <a href="graphics/flyer.png" class="work-card">
+        <div class="thumb"><img src="graphics/flyer.png" alt="flyer"/></div>
+        <div class="meta"><div class="title">Event Flyer</div><div class="kind">print &middot; layout</div></div>
+      </a>
+      <a href="graphics/mario.png" class="work-card">
+        <div class="thumb"><img src="graphics/mario.png" alt="mario"/></div>
+        <div class="meta"><div class="title">Mario Illustration</div><div class="kind">illustration</div></div>
+      </a>
+      <a href="graphics/instagram-post.jpg" class="work-card">
+        <div class="thumb"><img src="graphics/instagram-post.jpg" alt="instagram post"/></div>
+        <div class="meta"><div class="title">Instagram Post</div><div class="kind">social &middot; design</div></div>
+      </a>
+      <a href="graphics/instagram-post-2.jpg" class="work-card">
+        <div class="thumb"><img src="graphics/instagram-post-2.jpg" alt="instagram post 2"/></div>
+        <div class="meta"><div class="title">Instagram Post 2</div><div class="kind">social &middot; design</div></div>
+      </a>
+      <a href="graphics/quill.png" class="work-card">
+        <div class="thumb"><img src="graphics/quill.png" alt="quill"/></div>
+        <div class="meta"><div class="title">Quill</div><div class="kind">illustration</div></div>
+      </a>
+    </div>
+  </div>
 </section>
-<script type="text/javascript" src="script.js"></script>
+-->
+
+<!-- WRITING SECTION HIDDEN — uncomment to restore
+<section id="writing" class="content">
+  <div class="container">
+    <div class="section-label">writing</div>
+    <h2 class="section-title">Words on paper.</h2>
+    <div class="writing-list">
+      <a href="/writing.html" class="writing-item">
+        <span class="bullet"></span>
+        <div class="body">
+          <div class="title">Writing samples</div>
+          <div class="desc">Browse the full collection of essays, short pieces, and other writing.</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+      <a href="#" class="writing-item">
+        <span class="bullet" style="background:var(--pine);"></span>
+        <div class="body">
+          <div class="title">Featured piece title</div>
+          <div class="desc">Short description of what this piece is about — replace with real samples once we know which to highlight.</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+      <a href="#" class="writing-item">
+        <span class="bullet" style="background:var(--purple-light);"></span>
+        <div class="body">
+          <div class="title">Another featured piece</div>
+          <div class="desc">Another short description placeholder.</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+-->
+
+<section id="connect" class="content">
+  <div class="container">
+    <div class="section-label">connect</div>
+    <h2 class="section-title">Find me elsewhere.</h2>
+    <div class="connect-cards">
+      <a class="connect-card" href="https://blog.creativebymelissa.com">
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#FFFFFF"/>
+          <g fill="#FFFFFF" shape-rendering="crispEdges"><rect x="17" y="7" width="1" height="3"/><rect x="16" y="8" width="3" height="1"/></g>
+        </svg>
+        <div><div class="label">the blog</div><div class="handle">cbm blog</div></div>
+        <div class="desc">Random thoughts and half-formed ideas, published in the open.</div>
+      </a>
+      <a class="connect-card linkedin" href="https://www.linkedin.com/in/bordenmelissa">
+        <svg class="icon" viewBox="0 0 24 24" fill="#FFFFFF">
+          <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.339 18.337v-8.59h-2.667v8.59h2.667zm-1.333-9.764c.92 0 1.667-.745 1.667-1.665S7.926 5.243 7.006 5.243 5.339 5.989 5.339 6.908s.747 1.665 1.667 1.665zm10.998 9.764v-4.706c0-2.31-1.249-3.385-2.915-3.385-1.345 0-1.95.74-2.286 1.26v-1.08h-2.535c.033.738 0 8.59 0 8.59h2.535v-4.797c0-.227.016-.453.083-.616.18-.456.6-.928 1.298-.928.916 0 1.282.696 1.282 1.717v4.624h2.538z"/>
+        </svg>
+        <div><div class="label">linkedin</div><div class="handle">/bordenmelissa</div></div>
+        <div class="desc">For the proper professional version of me.</div>
+      </a>
+      <a class="connect-card strava" href="https://www.strava.com/athletes/87501353">
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169" fill="#C97A4F"/>
+        </svg>
+        <div><div class="label">strava</div><div class="handle">@melissa</div></div>
+        <div class="desc">For when I get my legs moving.</div>
+      </a>
+      <a class="connect-card email" href="mailto:melissaborden@outlook.com">
+        <svg class="icon" viewBox="0 0 24 24" fill="#FFFFFF">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-1.99-.9-1.99-2L2 6c0-1.1.9-2 2-2zm0 4l8 5 8-5v-2l-8 5-8-5v2z"/>
+        </svg>
+        <div><div class="label">email</div><div class="handle">say hello</div></div>
+        <div class="desc">Just to say hi.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="credit">creative by melissa &middot; 2026</div>
+  <div class="small">thanks for stopping by</div>
+</footer>
+
 </body>
 </html>
